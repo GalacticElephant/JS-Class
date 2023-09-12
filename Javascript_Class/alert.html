@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Magical Button</title>
+  <style>
+    body {
+      font-family: Comic Sans MS, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #ffc0c0;
+    }
+    
+    #container {
+      padding: 20px;
+    }
+    
+    #countButton {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    
+    #countButton:hover {
+      background-color: #ff4785;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <button id="countButton">Unleash the Counting Magic</button>
+</div>
+
+<audio id="sound" src="dipshit.mp3.mp3"></audio>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const countButton = document.getElementById('countButton');
+  const sound = document.getElementById('sound');
+  
+  let count = 1;
+  
+  countButton.addEventListener('click', function() {
+    if (count <= 100) {
+      alert(`Abracadabra! You've reached the mystical number: ${count}`);
+      sound.play(); 
+      count++;
+    }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Count to 100</title>
+</head>
+<body>
+
+<button id="countButton">Click me</button>
+<p id="countDisplay">Count: 0</p>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const countButton = document.getElementById('countButton');
+  const countDisplay = document.getElementById('countDisplay');
+  
+  let count = 0;
+  
+  countButton.addEventListener('click', function() {
+    if (count <= 100) {
+      countDisplay.textContent = `Count: ${count}`;
+      count++;
+    }
+  });
+});
+
+
+</script>
+
+</body> 
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>Counter</head>
+<body>
+<script>
+let answer = "yes";
+
+do {
+    let userNum = 0;
+
+    userNum = parseInt(prompt("Enter any number from 1 - 100 to sum it"));
+
+    while (isNaN(userNum) || userNum < 1 || userNum > 100) {
+        userNum = parseInt(prompt("Please enter a valid number between 1 and 100:"));
+    }
+
+    let sum = 0;
+
+    for (let i = 1; i <= userNum; i++) {
+        sum += i;
+    }
+
+    alert(`Sum of numbers from 1 to ${userNum} is ${sum}`);
+
+    answer = prompt("Do you want to continue (yes/no)?").toLowerCase();
+
+} while (answer === "yes");
+
+alert("Thank for!");
+
+
+</script>
+</body>
+
+</html>

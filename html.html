@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+           let sum = 0;
+
+do {
+  let userInput = parseInt(prompt("Enter a number between 1 and 100:"));
+
+  // Check if the user entered a valid number
+  if (!isNaN(userInput) && userInput >= 1 && userInput <= 100) {
+    sum += userInput;
+    alert(`Current sum: ${sum}`);
+  } else {
+    alert("Please enter a valid number between 1 and 100.");
+    continue; // Skip the rest of the loop and prompt again
+  }
+
+  let continueInput = prompt("Do you want to continue (yes/no)?").toLowerCase();
+
+  // Check if the user wants to continue
+  if (continueInput === "no") {
+    break;
+  }
+} while (true);
+
+if (sum > 0) {
+  alert(`Thank you! The final sum of the valid numbers is: ${sum}`);
+} else {
+  alert("No valid numbers were entered. Thank you!");
+}
+
+        </script>
+    </body>
+</html>
