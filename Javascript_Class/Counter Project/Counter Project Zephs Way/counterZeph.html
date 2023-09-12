@@ -8,7 +8,9 @@ do {
   let userInput = parseInt(prompt("Enter a number between 1 and 100:"));
 
   if (!isNaN(userInput) && userInput >= 1 && userInput <= 100) {
-    sum += userInput;
+    for (let i = 1; i <= userInput; i++) {
+      sum += i;
+    }
     alert(`Current sum: ${sum}`);
   } else {
     alert("Please enter a valid number between 1 and 100.");
@@ -23,11 +25,10 @@ do {
 } while (true);
 
 if (sum > 0) {
-  alert(`Thank you! The final sum of the valid numbers is: ${sum}`);
+  alert(`Thank you! The final sum of the numbers from 1 to the valid input is: ${sum}`);
 } else {
   alert("No valid numbers were entered. Thank you!");
 }
         </script>
     </body>
-
 </html>
