@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	  taxRateInput.value = "";
 	  salesTaxInput.value = "";
 	  totalInput.value = "";
+	  sound.play();
 	});
   });
   
