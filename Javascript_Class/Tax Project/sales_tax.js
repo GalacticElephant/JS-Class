@@ -24,9 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	  totalInput.value = total;
 	});
   
-		// Clicky boi 2 electric boogaloo
+		// Nuke the things
 	clearButton.addEventListener("click", function () {
-	  // Forget the things
 	  subtotalInput.value = "";
 	  taxRateInput.value = "";
 	  salesTaxInput.value = "";
