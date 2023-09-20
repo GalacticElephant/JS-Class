@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	const salesTaxInput = document.getElementById("sales_tax");
 	const totalInput = document.getElementById("total");
   
-	// Find clicky bois
+	// Find button bois
 	const calculateButton = document.getElementById("calculate");
 	const clearButton = document.getElementById("clear");
   
-	// Let clicky bois do things
+	// Do the things
 	calculateButton.addEventListener("click", function () {
 	  // Steal user input
 	  const subtotal = parseFloat(subtotalInput.value);
