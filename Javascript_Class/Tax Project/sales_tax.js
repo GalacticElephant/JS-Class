@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	  totalInput.value = total;
 	});
   
-	  // Nuke the things
+	// Nuke the things
 	clearButton.addEventListener("click", function () {
 	  subtotalInput.value = "";
 	  taxRateInput.value = "";
