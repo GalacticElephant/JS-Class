@@ -76,4 +76,4 @@ function computerMovement() {
 setInterval(function () {
     draw();
     computerMovement(); // Add computer-controlled paddle movement
-}, 1000 / 60);
+}, 950 / 60);
