@@ -1,6 +1,6 @@
 h1 {
     text-align: center;
-    margin-bottom: -10%;
+    margin-bottom: 0%;
 }
 
 p {
@@ -16,7 +16,7 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 85vh;
     margin: 0;
     background-color: #e5f8ff;
 }
