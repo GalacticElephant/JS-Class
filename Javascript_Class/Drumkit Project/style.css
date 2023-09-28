@@ -1,0 +1,66 @@
+body {
+    background: repeating-linear-gradient(45deg, #FF00FF, #00FFFF 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .keys {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    gap: 10px;
+  }
+  
+  .key {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: calc(33.333% - 10px);
+    background: #FFFF00;
+    border: 4px solid #FF0000;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00FF00;
+    cursor: pointer;
+    transform: rotate(45deg);
+    transition: transform 0.3s, background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .key.kbd {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #FF00FF;
+    text-transform: uppercase;
+  }
+  
+  .key.sound {
+    font-size: 1rem;
+    color: #FF00FF;
+    text-transform: uppercase;
+  }
+  
+  audio {
+    display: none;
+  }
+  
+  [data-key="65"] { background: #00FFFF; border-color: #FFFF00; box-shadow: 0px 0px 20px #FF00FF; }
+  [data-key="83"] { background: #FF0000; border-color: #FFFF00; box-shadow: 0px 0px 20px #FF00FF; }
+  [data-key="68"] { background: #FFFF00; border-color: #FF0000; box-shadow: 0px 0px 20px #FF00FF; }
+  [data-key="70"] { background: #00FF00; border-color: #FF0000; box-shadow: 0px 0px 20px #FF00FF; }
+  [data-key="71"] { background: #FF00FF; border-color: #00FF00; box-shadow: 0px 0px 20px #FFFF00; }
+  [data-key="72"] { background: #00FF00; border-color: #FF00FF; box-shadow: 0px 0px 20px #FFFF00; }
+  [data-key="74"] { background: #FFFF00; border-color: #00FF00; box-shadow: 0px 0px 20px #FFFF00; }
+  [data-key="75"] { background: #00FFFF; border-color: #FFFF00; box-shadow: 0px 0px 20px #FF00FF; }
+  [data-key="76"] { background: #FF0000; border-color: #00FFFF; box-shadow: 0px 0px 20px #FFFF00; }
+  
+  .key:hover {
+    transform: rotate(45deg) scale(1.2);
+    background: #FF00FF;
+    border-color: #00FF00;
+    box-shadow: 0px 0px 30px #FFFF00;
+  }
+  
