@@ -51,14 +51,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  // JavaScript
-const main = document.querySelector("main");
-
-document.addEventListener("mousemove", (e) => {
-  const x = e.clientX;
-  const y = e.clientY;
-  
-  main.style.transform = `translate(${x}px, ${y}px) rotate(180deg)`;
-});
-
-  
+ 

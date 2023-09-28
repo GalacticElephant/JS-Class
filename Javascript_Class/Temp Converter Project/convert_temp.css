@@ -1,117 +1,115 @@
 /* Cursed CSS */
 
-/* Rotate the entire form */
-/* Cursed CSS */
-
-/* Rotate the entire form */
+/* Rotate the entire form and make it spin */
 main {
-    transform-origin: center;
-    animation: rotate 4s linear infinite;
-    cursor: none; /* Hide the cursor */
-  }
-  
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(180deg) rotateZ(45deg);
+  animation: spin 3s linear infinite;
+}
 
-  
-  /* Blinking header */
-  h1 {
-    font-size: 72px;
+body {
+  background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(180deg) rotateZ(45deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(180deg) rotateZ(405deg);
+  }
+}
+
+/* Blinking header with random colors */
+h1 {
+  font-size: 72px;
+  animation: blink 1s infinite, color-change 5s infinite;
+}
+
+@keyframes blink {
+  0%, 49.9% {
+    opacity: 0;
+  }
+  50%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes color-change {
+  0%, 100% {
     color: red;
-    animation: blink 1s linear infinite;
   }
-  
-  @keyframes blink {
-    0%, 49.9% {
-      opacity: 0;
-    }
-    50%, 100% {
-      opacity: 1;
-    }
+  25% {
+    color: green;
   }
-  
-  /* Add some random rotations to labels */
-  label {
-    transform: rotate(5deg);
+  50% {
+    color: blue;
   }
-  
-  /* Make input fields jump around */
-  input[type="text"],
-  input[type="button"] {
-    animation: jump 1s linear infinite;
+  75% {
+    color: orange;
   }
-  
-  @keyframes jump {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    25% {
-      transform: translateY(-20px);
-    }
-    50% {
-      transform: translateY(20px);
-    }
-    75% {
-      transform: translateY(-20px);
-    }
+}
+
+/* Add random rotations and scaling to labels */
+label {
+  transform: rotate(5deg) scale(1.2);
+}
+
+/* Make input fields shake */
+input[type="text"],
+input[type="button"] {
+  animation: shake 0.5s linear infinite;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
   }
-  
-  /* Flashy colors for the Convert button */
-  #convert {
-    background-color: #ff00ff;
-    color: #00ff00;
-    border: 5px solid #ffff00;
-    font-size: 24px;
-    animation: flash 0.5s linear infinite;
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
   }
-  
-  @keyframes flash {
-    0%, 100% {
-      background-color: #ff00ff;
-      color: #00ff00;
-    }
-    50% {
-      background-color: #00ff00;
-      color: #ff00ff;
-    }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
   }
-  
-  /* Add random rotations to radio buttons */
-  input[type="radio"] {
-    transform: rotate(-10deg);
+}
+
+/* Flashy and random colors for the Convert button */
+#convert {
+  background-color: rgb(255, 0, 0);
+  color: rgb(0, 255, 0);
+  border: 5px solid rgb(0, 0, 255);
+  font-size: 24px;
+  animation: flash 0.5s infinite, color-change 5s infinite;
+}
+
+/* Randomly move and rotate radio buttons */
+input[type="radio"] {
+  animation: chaos 3s linear infinite alternate;
+}
+
+@keyframes chaos {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
   }
-  
-  /* Make disabled input fields spin */
-  input[type="text"]:disabled {
-    animation: spin 2s linear infinite;
+  25% {
+    transform: translate(-20px, -20px) rotate(90deg);
   }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  50% {
+    transform: translate(20px, 20px) rotate(180deg);
   }
-  
-  /* Create chaos by moving elements randomly */
-  div {
-    animation: chaos 5s linear infinite alternate;
+  75% {
+    transform: translate(-20px, 20px) rotate(270deg);
   }
-  
-  @keyframes chaos {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(-50px, 50px);
-    }
-  }
-  
+}
+
+/* Make disabled input fields spin */
+input[type="text"]:disabled {
+  animation: spin 2s linear infinite;
+}
+
+/* Create chaos by moving elements randomly */
+div {
+  animation: chaos 5s linear infinite alternate;
+}
