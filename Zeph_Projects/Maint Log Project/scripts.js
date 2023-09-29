@@ -72,3 +72,29 @@ populateSelectWithOptions(vehicleTypeSelect, vehicleOptions);
 
 
 
+
+//Submit to CSV
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("maintenanceForm");
+
+  form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      // Serialize the form data into a URL-encoded string
+      const formData = new URLSearchParams(new FormData(form));
+
+      // Send a POST request to the server-side script
+      fetch(form.action, {
+          method: "POST",
+          body: formData,
+      })
+          .then((response) => response.text())
+          .then((data) => {
+              alert(data); // Show a success message or handle the response as needed
+              form.reset(); // Optionally, reset the form after submission
+          })
+          .catch((error) => {
+              console.error("Error:", error);
+          });
+  });
+});
