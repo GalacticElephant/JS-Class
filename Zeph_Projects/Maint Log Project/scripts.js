@@ -1,5 +1,5 @@
-// Set the current date to today
 const today = new Date().toISOString().split('T')[0];
+// Set the current date to today
 document.getElementById('maintenanceDate').value = today;
 
 // Array of breakdown options
@@ -71,30 +71,27 @@ populateSelectWithOptions(vehicleTypeSelect, vehicleOptions);
 
 
 
-
-
 //Submit to CSV
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("maintenanceForm");
+document.getElementById('maintenanceForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent the default form submission
 
-  form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      // Serialize the form data into a URL-encoded string
-      const formData = new URLSearchParams(new FormData(form));
-
-      // Send a POST request to the server-side script
-      fetch(form.action, {
-          method: "POST",
-          body: formData,
-      })
-          .then((response) => response.text())
-          .then((data) => {
-              alert(data); // Show a success message or handle the response as needed
-              form.reset(); // Optionally, reset the form after submission
-          })
-          .catch((error) => {
-              console.error("Error:", error);
-          });
-  });
+  // Send the form data to the server
+  fetch('/submit', {
+    method: 'POST',
+    body: new FormData(this),
+  })
+  .then(response => response.text())
+  .then(data => {
+    console.log(data); // Log the server response
+    // Optionally, reset the form after successful submission
+    this.reset();
+  })
+  .catch(error => console.error('Error:', error));
 });
+
+
+
+
+
+
+console.log('scripts.js is running');
