@@ -33,7 +33,7 @@ form {
 label {
     font-size: 18px;
     color: #993333;
-    display: block; 
+    display: block; /* Ensure labels are on top of input elements */
 }
 
 input[type="date"],
@@ -47,14 +47,14 @@ textarea {
     border-radius: 5px;
     background-color: #f5f5f5;
     color: #333333;
-    box-sizing: border-box; 
+    box-sizing: border-box; /* Ensure padding and border don't affect width */
 }
 
 select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url('down-arrow.png'); 
+    background-image: url('down-arrow.png'); /* Add your arrow image */
     background-position: right center;
     background-repeat: no-repeat;
 }
