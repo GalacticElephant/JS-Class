@@ -1,6 +1,5 @@
 /* Cursed CSS */
 
-/* Rotate the entire form and make it spin */
 main {
   position: absolute;
   top: 50%;
@@ -22,7 +21,6 @@ body {
   }
 }
 
-/* Blinking header with random colors */
 h1 {
   font-size: 72px;
   animation: blink 1s infinite, color-change 5s infinite;
@@ -52,12 +50,10 @@ h1 {
   }
 }
 
-/* Add random rotations and scaling to labels */
 label {
   transform: rotate(5deg) scale(1.2);
 }
 
-/* Make input fields shake */
 input[type="text"],
 input[type="button"] {
   animation: shake 0.5s linear infinite;
@@ -75,7 +71,6 @@ input[type="button"] {
   }
 }
 
-/* Flashy and random colors for the Convert button */
 #convert {
   background-color: rgb(255, 0, 0);
   color: rgb(0, 255, 0);
@@ -84,7 +79,6 @@ input[type="button"] {
   animation: flash 0.5s infinite, color-change 5s infinite;
 }
 
-/* Randomly move and rotate radio buttons */
 input[type="radio"] {
   animation: chaos 3s linear infinite alternate;
 }
@@ -104,12 +98,10 @@ input[type="radio"] {
   }
 }
 
-/* Make disabled input fields spin */
 input[type="text"]:disabled {
   animation: spin 2s linear infinite;
 }
 
-/* Create chaos by moving elements randomly */
 div {
   animation: chaos 5s linear infinite alternate;
 }
