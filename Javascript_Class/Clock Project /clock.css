@@ -1,7 +1,9 @@
-/* Fancier CSS */
+/* how do you put up with me */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #171717;
+    background-image: url('https://media.tenor.com/PtXPVT6Pzj0AAAAd/the-horror-scared.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #fff;
     margin: 0;
     padding: 0;
