@@ -1,5 +1,3 @@
-"use strict";
-
 const $ = (selector) => document.querySelector(selector);
 
 const padSingleDigit = (num) => num.toString().padStart(2, "0");
