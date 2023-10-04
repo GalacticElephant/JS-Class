@@ -1,79 +1,98 @@
-// Get canvas element and 2d drawing context
-const canvas = document.getElementById('pong');
-const context = canvas.getContext('2d');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 5px;
+            margin: 20px auto;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            font-size: 24px;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+        .cell:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <div id="message"></div>
+    <div class="board" id="board"></div>
+    <script>
+        const board = document.getElementById('board');
+        const message = document.getElementById('message');
+        let currentPlayer = 'X';
+        const cells = [];
 
-// Define game variables
-const paddleWidth = 10;
-const paddleHeight = 100;
-let paddle1Y = canvas.height / 2 - paddleHeight / 2;
-let paddle2Y = canvas.height / 2 - paddleHeight / 2;
-const ballSize = 10;
-let ballX = canvas.width / 2;
-let ballY = canvas.height / 2;
-let ballSpeedX = 5;
-let ballSpeedY = 5;
-const paddleSpeed = 10;
+        // Create the Tic-Tac-Toe board
+        for (let i = 0; i < 9; i++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            cell.dataset.index = i;
+            board.appendChild(cell);
+            cells.push(cell);
 
-// Define functions to draw game elements
-function draw() {
-    // Clear the canvas
-    context.clearRect(0, 0, canvas.width, canvas.height);
+            cell.addEventListener('click', () => makeMove(i));
+        }
 
-    // Draw paddles
-    context.fillStyle = '#fa7659';
-    context.fillRect(0, paddle1Y, paddleWidth, paddleHeight);
-    context.fillRect(canvas.width - paddleWidth, paddle2Y, paddleWidth, paddleHeight);
+        // Function to make a move
+        function makeMove(index) {
+            if (!cells[index].textContent) {
+                cells[index].textContent = currentPlayer;
+                cells[index].style.pointerEvents = 'none';
 
-    // Draw ball
-    context.fillRect(ballX - ballSize / 2, ballY - ballSize / 2, ballSize, ballSize);
+                if (checkWin()) {
+                    message.textContent = `${currentPlayer} wins!`;
+                } else if (isBoardFull()) {
+                    message.textContent = "It's a draw!";
+                } else {
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                }
+            }
+        }
 
-    // Update ball position
-    ballX += ballSpeedX;
-    ballY += ballSpeedY;
+        // Function to check for a win
+        function checkWin() {
+            const winningCombinations = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
 
-    // Ball collision with top and bottom walls
-    if (ballY < 0 || ballY > canvas.height) {
-        ballSpeedY = -ballSpeedY;
-    }
+            for (const combination of winningCombinations) {
+                const [a, b, c] = combination;
+                if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
+                    return true;
+                }
+            }
 
-    // Ball collision with paddles
-    if (
-        (ballX < paddleWidth && ballY > paddle1Y && ballY < paddle1Y + paddleHeight) ||
-        (ballX > canvas.width - paddleWidth && ballY > paddle2Y && ballY < paddle2Y + paddleHeight)
-    ) {
-        ballSpeedX = -ballSpeedX;
-    }
+            return false;
+        }
 
-    // Ball out of bounds
-    if (ballX < 0 || ballX > canvas.width) {
-        // Reset ball position
-        ballX = canvas.width / 2;
-        ballY = canvas.height / 2;
-        // Reverse ball direction
-        ballSpeedX = -ballSpeedX;
-    }
-}
-
-// Update game at a fixed interval (60 FPS)
-setInterval(draw, 1000 / 60);
-
-// Handle user input
-window.addEventListener('mousemove', function (event) {
-    const mouseY = event.clientY - canvas.getBoundingClientRect().top;
-    paddle1Y = mouseY - paddleHeight / 2;
-});
-
-function computerMovement() {
-    const paddle2YCenter = paddle2Y + paddleHeight / 2;
-    if (paddle2YCenter < ballY - 35) {
-        paddle2Y += paddleSpeed;
-    } else if (paddle2YCenter > ballY + 35) {
-        paddle2Y -= paddleSpeed;
-    }
-}
-
-// Update game at a fixed interval (60 FPS)
-setInterval(function () {
-    draw();
-    computerMovement(); // Add computer-controlled paddle movement
-}, 950 / 60);
+        // Function to check if the board is full
+        function isBoardFull() {
+            return cells.every(cell => cell.textContent);
+        }
+    </script>
+</body>
+</html>
