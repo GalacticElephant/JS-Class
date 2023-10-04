@@ -25,8 +25,7 @@ const displayCurrentTime = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Set initial clock display and then set an interval timer to display
-  // the new time every second.
+  /*this made me an unhappy boi*/
   displayCurrentTime();
   setInterval(displayCurrentTime, 1000);
 });
