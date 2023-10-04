@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>REW Maint Log
+    </title>
+    <link rel="stylesheet" type="text/css" href="vaporStyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Maintenance Log</h1>
+        <form id="maintenanceForm" action="/submit" method="post">
+
+            <div class="form-group">
+                <label for="maintenanceDate">Date:</label>
+                <input type="date" id="maintenanceDate" name="maintenanceDate" required>
+            </div>
+            <div class="form-group">
+                <label for="vehicleType">Unit Type:</label>
+                <select id="vehicleType" name="vehicleType">
+                    <option value="">-- Select Option --</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="vehicleNumber">Please select a unit type</label>
+                <input type="text" id="vehicleNumber" name="vehicleNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="driverName">Driver Name:</label>
+                <input type="text" id="driverName" name="driverName" required>
+            </div>
+            <div class="form-group">
+                <label for="breakdownType">Breakdown Type:</label>
+                <select id="breakdownType" name="breakdownType">
+                    <option value="Truck">--</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="driverFault">Driver Fault:</label>
+                <select id="driverFault" name="driverFault">
+                    <option value="Truck">No</option>
+                    <option value="Trailer">Yes</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="details">Details:</label>
+                <textarea id="details" name="details" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location">
+            </div>
+            <div class="form-group">
+                <label for="fixPlan">Repair plan:</label>
+                <textarea id="fixPlan" name="fixPlan"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+<script src="scripts.js"></script>
+
+
+</html>

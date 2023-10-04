@@ -1,0 +1,74 @@
+/* styles.css */
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-family: 'Brush Script MT', cursive;
+    text-align: center;
+    color: #993333;
+    font-size: 4em;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+    color: #993333;
+    display: block; /* Ensure labels are on top of input elements */
+}
+
+input[type="date"],
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #993333;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #333333;
+    box-sizing: border-box; 
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('down-arrow.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #993333;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff6666;
+}

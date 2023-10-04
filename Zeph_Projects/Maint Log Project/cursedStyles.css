@@ -1,0 +1,54 @@
+body {
+    font-family: Comic Sans MS, Papyrus, Curlz MT, cursive;
+    color: pink;
+    text-align: center;
+}
+
+.container {
+    border: 10px solid lime;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 100px;
+    background: url('https://media3.giphy.com/media/G59aee587o15C9fUHQ/200.webp?cid=ecf05e477bp8m6ts5z3dv49im6j5ndv8ucq0yyvq9s3609lj&ep=v1_gifs_search&rid=200.webp&ct=g');
+}
+
+h1 {
+    font-size: 72px;
+    text-shadow: 10px 10px 5px #FFD700;
+    color: red;
+}
+
+.form-group {
+    border: 2px solid purple;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: #00FF00;
+}
+
+label {
+    font-weight: bold;
+    color: #FF00FF;
+}
+
+input[type="text"],
+textarea,
+select {
+    background-color: yellow;
+    border: 2px dashed orange;
+    font-family: "Comic Sans MS";
+    font-size: 24px;
+    color: blue;
+}
+
+button {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    border: 5px solid black;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
