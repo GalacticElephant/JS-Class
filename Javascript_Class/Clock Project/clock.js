@@ -14,7 +14,7 @@ const displayCurrentTime = () => {
   const secondsDisplay = $("#seconds");
   const ampmDisplay = $("#ampm");
 
-  const formattedHours = padSingleDigit(hours % 12 || 12);
+  const formattedHours = padSingleDigit(hours % 12);
   const formattedMinutes = padSingleDigit(minutes);
   const formattedSeconds = padSingleDigit(seconds);
 
@@ -27,5 +27,5 @@ const displayCurrentTime = () => {
 document.addEventListener("DOMContentLoaded", () => {
 
   displayCurrentTime();
-  setInterval(displayCurrentTime, 1000);
+  setInterval(displayCurrentTime);
 });
