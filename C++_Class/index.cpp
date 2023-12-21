@@ -1,11 +1,14 @@
-#include <iostream> 
-
-using namespace std;
+#include <iostream>
 
 int main(){
 
-    cout << "Hello World";
-    
-return 0;
+    int favorite_number;
+
+    std::cout << "Enter your favorite number";
+    std::cin >> favorite_number;
+
+    std::cout << "Wow that's my favorite number too";std::endl;
+
+    return 0;
 
 }
