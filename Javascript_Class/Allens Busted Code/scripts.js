@@ -9,7 +9,7 @@ const endTime = document.querySelector(".display_end-time");
 document.addEventListener("DOMContentLoaded", function () {
   // Code to be executed when the DOM is ready
 
-  const buttons = document.querySelector("[data-time]");
+  const buttons = document.querySelectorAll("[data-time]");
 
   setDate();
   setInterval(setDate, 1000);

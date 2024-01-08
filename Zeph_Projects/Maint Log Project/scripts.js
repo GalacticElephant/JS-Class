@@ -71,23 +71,6 @@ populateSelectWithOptions(vehicleTypeSelect, vehicleOptions);
 
 
 
-//Submit to CSV
-document.getElementById('maintenanceForm').addEventListener('submit', function (e) {
-  e.preventDefault(); // Prevent the default form submission
-
-  // Send the form data to the server
-  fetch('/submit', {
-    method: 'POST',
-    body: new FormData(this),
-  })
-  .then(response => response.text())
-  .then(data => {
-    console.log(data); // Log the server response
-    // Optionally, reset the form after successful submission
-    this.reset();
-  })
-  .catch(error => console.error('Error:', error));
-});
 
 
 
